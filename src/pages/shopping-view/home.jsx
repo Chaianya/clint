@@ -353,45 +353,45 @@ function ShoppingHome() {
         </div>
       </section>
 
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">All Featured Interiors</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {featureImageList.slice(0, 12).map((imageItem, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, translateY: 20 }}
-                animate={{ opacity: 1, translateY: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+     <section className="py-12 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-8">All Featured Interiors</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {featureImageList.slice(0, 12).map((imageItem, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, translateY: 20 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+        >
+          <Card className="cursor-pointer hover:shadow-lg transition-shadow">
+            <CardContent className="flex flex-col items-center justify-center p-6">
+              <img
+                src={imageItem.image}
+                alt={`Featured ${index + 1}`}
+                className="w-full h-48 object-cover mb-4"
+              />
+              <span className="font-bold">Image {index + 1}</span>
+              <Button
+                onClick={() => {
+                  const message = `Hello, I'd like to inquire about this image: ${imageItem.image}`;
+                  const whatsappURL = `https://wa.me/${import.meta.env.VITE_MOBILE_NO}?text=${encodeURIComponent(message)}`;
+                  window.open(whatsappURL, "_blank");
+                }}
+                variant="secondary"
+                size="sm"
+                className="mt-2"
               >
-                <Card className="cursor-pointer hover:shadow-lg transition-shadow">
-                  <CardContent className="flex flex-col items-center justify-center p-6">
-                    <img
-                      src={imageItem.image}
-                      alt={`Featured ${index + 1}`}
-                      className="w-full h-48 object-cover mb-4"
-                    />
-                    <span className="font-bold">Image {index + 1}</span>
-                    <Button
-                      onClick={() => {
-                        
-                        const message = `Hello, I'd like to inquire about this image: ${imageItem.image}`;
-                        const whatsappURL = `https://wa.me/${import.meta.env.VITE_MOBILE_NO}?text=${encodeURIComponent(message)}`;
-                        window.open(whatsappURL, "_blank");
-                      }}
-                      variant="secondary"
-                      size="sm"
-                      className="mt-2"
-                    >
-                      Contact Us
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+                Contact Us
+              </Button>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       <section className="py-12 bg-gray-50">
         <div className="container  mx-auto px-4">

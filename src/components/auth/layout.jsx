@@ -2,7 +2,7 @@
 
 import { Outlet } from "react-router-dom"
 import { motion } from "framer-motion"
-import { Lamp, Sofa, Plant, PaintBucket } from "lucide-react"
+import { Lamp, Sofa, Flower2, PaintBucket } from "lucide-react"
 
 function AuthLayout() {
   return (
@@ -45,7 +45,7 @@ function AuthLayout() {
           animate={{ y: [0, 15, 0], rotate: [0, 10, 0] }}
           transition={{ duration: 7, repeat: Infinity, repeatType: "reverse" }}
         >
-          <Plant className="text-primary-foreground w-12 h-12" />
+          <Flower2 className="text-primary-foreground w-12 h-12" />
         </motion.div>
         <motion.div
           className="absolute bottom-1/3 left-1/3"
